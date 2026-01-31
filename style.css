@@ -1,81 +1,94 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    text-align: center;
-    min-height: 100vh;
-    background-color: #f4e4ba;
+    align-items: center;
+    background: #f6e8bc;
+    margin: 0;
+    padding: 20px;
 }
 
-.container{
+.container {
+    width: 100%;
+    max-width: 380px;
     background-color: #FFF;
-    min-height: 45vh;
-    width: 45vh;
-    margin-bottom: 10%;
-    margin-top: 10%;
-    border-radius: 1rem;
-    padding: 2rem;
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
 }
 
-form{
+form {
     margin: 2rem 0 1rem 0;
 }
 
 form select,
 button,
-input{
+input {
     width: 100%;
     border-radius: 0.75rem;
     border: none;
     outline: none;
+    padding: 12px;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
-form input{
+form input {
     border: 1px solid lightgray;
     font-size: 1rem;
     height: 3rem;
     padding-left: 0.5rem;
 }
 
- .dropdown{
+.dropdown {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 2rem;
 }
 
-.dropdown i{
+.dropdown i {
     font-size: 1.5rem;
     margin-top: 1rem;
 }
 
-.select-container img{
+.select-container img {
     max-width: 2rem;
 }
- 
-.select-container{
+
+.select-container {
     display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 6rem;
     border-radius: 0.5rem;
-    border: 1px solid lightgray; 
-} 
+    border: 1px solid lightgray;
+}
 
-.select-container select{
+.select-container>div {
+    flex: 1;
+    min-width: 120px;
+}
+
+.select-container select {
     font-size: 1rem;
     width: auto;
 }
 
-.msg{
+.msg {
     margin: 2rem 0 2rem 0;
 }
 
-button{
+button {
     height: 3rem;
     background-color: #af4d98;
     color: #FFF;
@@ -85,39 +98,92 @@ button{
 
 /* Money Rain Animation */
 .money-rain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
 }
 
 .money-rain span {
-  position: absolute;
-  top: -50px;
-  font-size: 24px;
-  animation: fall linear infinite;
-  opacity: 0.7;
+    position: absolute;
+    top: -50px;
+    font-size: 24px;
+    animation: fall linear infinite;
+    opacity: 0.7;
 }
 
 /* Random positions & delays */
-.money-rain span:nth-child(1) { left: 10%; animation-duration: 5s; }
-.money-rain span:nth-child(2) { left: 25%; animation-duration: 6s; }
-.money-rain span:nth-child(3) { left: 40%; animation-duration: 4.5s; }
-.money-rain span:nth-child(4) { left: 55%; animation-duration: 5.5s; }
-.money-rain span:nth-child(5) { left: 70%; animation-duration: 6.5s; }
-.money-rain span:nth-child(6) { left: 85%; animation-duration: 4s; }
-.money-rain span:nth-child(7) { left: 50%; animation-duration: 7s; }
-.money-rain span:nth-child(8) { left: 30%; animation-duration: 5.2s; }
+.money-rain span:nth-child(1) {
+    left: 10%;
+    animation-duration: 5s;
+}
+
+.money-rain span:nth-child(2) {
+    left: 25%;
+    animation-duration: 6s;
+}
+
+.money-rain span:nth-child(3) {
+    left: 40%;
+    animation-duration: 4.5s;
+}
+
+.money-rain span:nth-child(4) {
+    left: 55%;
+    animation-duration: 5.5s;
+}
+
+.money-rain span:nth-child(5) {
+    left: 70%;
+    animation-duration: 6.5s;
+}
+
+.money-rain span:nth-child(6) {
+    left: 85%;
+    animation-duration: 4s;
+}
+
+.money-rain span:nth-child(7) {
+    left: 50%;
+    animation-duration: 7s;
+}
+
+.money-rain span:nth-child(8) {
+    left: 30%;
+    animation-duration: 5.2s;
+}
 
 @keyframes fall {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(110vh);
-  }
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(110vh);
+    }
+}
+
+@media (max-width: 480px) {
+    .money-rain {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .container {
+        margin: 10px;
+        border-radius: 16px;
+    }
+
+    button {
+        font-size: 15px;
+    }
 }
